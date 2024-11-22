@@ -12,6 +12,7 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "jest": "^29.7.0",
+    "jsoneditor": "^10.1.1",
     "jsoneditor-react": "^3.1.2",
     "playwright": "^1.49.0",
     "react": "^18.3.1",
