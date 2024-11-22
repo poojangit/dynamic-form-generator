@@ -4,7 +4,33 @@ import FormPreview from './components/FormPreview';
 import './styles/index.css';
 
 const App = () => {
-  const [jsonSchema, setJsonSchema] = useState('{}');
+  // Replace the empty JSON schema with the provided sample schema
+  const [jsonSchema, setJsonSchema] = useState(`
+  {
+    "formTitle": "Project Requirements Survey",
+    "formDescription": "Please fill out this survey about your project needs",
+    "fields": [
+      {
+        "id": "name",
+        "type": "text",
+        "label": "Full Name",
+        "required": true,
+        "placeholder": "Enter your full name"
+      },
+      {
+        "id": "email",
+        "type": "email",
+        "label": "Email Address",
+        "required": true,
+        "placeholder": "you@example.com",
+        "validation": {
+          "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+          "message": "Please enter a valid email address"
+        }
+      }
+    ]
+  }
+  `);
 
   return (
     <div className="flex flex-col md:flex-row h-screen">
@@ -14,9 +40,7 @@ const App = () => {
       <div className="w-full md:w-1/2 p-4">
         <FormPreview jsonSchema={jsonSchema} />
       </div>
-      {/* <h1>Hello</h1> */}
     </div>
-    
   );
 };
 
